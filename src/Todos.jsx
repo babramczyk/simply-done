@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import CreateTodo from "./CreateTodo";
 
 class Todos extends Component {
   render() {
     return (
       <div className="todos">
-        I will be todos
+        <CreateTodo />
       </div>
     );
   }
