@@ -5,7 +5,7 @@ import Todos from "./Todos";
 class App extends Component {
   render() {
     return (
-      <div className="todos">
+      <div className="app">
         <Todos />
       </div>
     );
