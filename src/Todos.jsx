@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import "./App.css";
-import Todos from "./Todos";
 
-class App extends Component {
+class Todos extends Component {
   render() {
     return (
       <div className="todos">
-        <Todos />
+        I will be todos
       </div>
     );
   }
 }
 
-export default App;
+export default Todos;
