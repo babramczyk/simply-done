@@ -10,8 +10,12 @@ class TodosList extends Component {
   }
 }
 
-function renderTodo(todo) {
-  return <li key={todo}>{todo}</li>;
+function renderTodo(todo, index) {
+  return (
+    <li className="todos-list__item" key={index}>
+      {todo}
+    </li>
+  );
 }
 
 export default TodosList;
