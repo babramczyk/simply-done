@@ -3,17 +3,24 @@ import CreateTodo from "./CreateTodo";
 import TodosList from "./TodosList";
 
 class Todos extends Component {
-  render() {
-    const todos = [
-      "Build a todo app in React",
-      "Get noticed",
-      "Get a better life"
-    ];
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: []
+    };
+  }
 
+  handleTodoAdd(text) {
+    this.setState({
+      todos: [text]
+    });
+  }
+
+  render() {
     return (
       <div className="todos">
-        <CreateTodo />
-        <TodosList todos={todos} />
+        <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
+        <TodosList todos={this.state.todos} />
       </div>
     );
   }

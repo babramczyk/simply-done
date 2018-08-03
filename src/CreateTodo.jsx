@@ -3,10 +3,16 @@ import React, { Component } from "react";
 class CreateTodo extends Component {
   render() {
     return (
-      <div className="create-todo">
+      <form className="create-todo" onSubmit={e => this.handleSubmit(e)}>
         <input type="text" />
-      </div>
+        <input type="submit" value="Add" />
+      </form>
     );
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onAdd("hey");
   }
 }
 
