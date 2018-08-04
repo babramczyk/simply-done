@@ -13,7 +13,10 @@ class Todos extends Component {
   handleTodoAdd(text) {
     this.setState((prevState, props) => {
       const todos = prevState.todos;
-      todos.push(text);
+      todos.push({
+        text: text,
+        id: prevState.todos.length
+      });
       return {
         todos: todos
       };

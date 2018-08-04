@@ -7,8 +7,8 @@ class TodosList extends Component {
   }
 
   renderTodos() {
-    return this.props.todos.map((text, index) => {
-      return <TodoItem text={text} key={index} />;
+    return this.props.todos.map(todo => {
+      return <TodoItem todo={todo} key={todo.id} />;
     });
   }
 }
