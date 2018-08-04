@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TodoItem from "./TodoItem";
 
 class TodosList extends Component {
   render() {
@@ -6,16 +7,10 @@ class TodosList extends Component {
   }
 
   renderTodos() {
-    return this.props.todos.map(renderTodo);
+    return this.props.todos.map((text, index) => {
+      return <TodoItem text={text} key={index} />;
+    });
   }
-}
-
-function renderTodo(todo, index) {
-  return (
-    <li className="todos-list__item" key={index}>
-      {todo}
-    </li>
-  );
 }
 
 export default TodosList;
