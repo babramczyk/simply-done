@@ -28,6 +28,9 @@ class CreateTodo extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.onAdd(this.state.text);
+    this.setState({
+      text: ""
+    });
   }
 }
 
