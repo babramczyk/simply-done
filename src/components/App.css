@@ -4,3 +4,6 @@
   align-items: center;
 }
 
+.todo-list__item--completed {
+  color: green;
+}

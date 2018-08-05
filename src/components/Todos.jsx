@@ -13,6 +13,7 @@ class Todos extends Component {
   handleTodoAdd(text) {
     const todos = [...this.state.todos];
     todos.push({
+      completed: false,
       text: text,
       id: todos.length
     });
@@ -23,8 +24,8 @@ class Todos extends Component {
 
   handleTodoComplete(id) {
     const todos = [...this.state.todos];
-    const index = todos.findIndex(todo => todo.id === id);
-    todos.splice(index, 1);
+    const todo = todos.find(todo => todo.id === id);
+    todo.completed = true;
     this.setState({ todos: todos });
   }
 
