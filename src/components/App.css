@@ -4,9 +4,31 @@
   align-items: center;
 }
 
+.todos {
+  width: 200px;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.create-todo {
+  display: flex;
+  justify-content: center;
+}
+
+.todos-list {
+  padding: 0;
+  margin: 0;
+}
+
 .todo-list__item {
   list-style: none;
   display: flex;
+}
+
+.todo-list__item-text {
+  flex: 1;
 }
 
 .todo-list__item--completed {

@@ -9,7 +9,7 @@ class TodoItem extends Component {
         }`}
       >
         {this.renderButton()}
-        {this.props.todo.text}
+        <span className={"todo-list__item-text"}>{this.props.todo.text}</span>
       </li>
     );
   }
