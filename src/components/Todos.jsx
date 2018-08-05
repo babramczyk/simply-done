@@ -23,11 +23,21 @@ class Todos extends Component {
     });
   }
 
+  handleTodoComplete(id) {
+    let todos = [...this.state.todos];
+    const index = todos.findIndex(todo => todo.id === id);
+    todos.splice(index, 1);
+    this.setState({ todos: todos });
+  }
+
   render() {
     return (
       <div className="todos">
         <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
-        <TodosList todos={this.state.todos} />
+        <TodosList
+          todos={this.state.todos}
+          onTodoComplete={id => this.handleTodoComplete(id)}
+        />
       </div>
     );
   }
