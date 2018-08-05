@@ -11,20 +11,18 @@ class Todos extends Component {
   }
 
   handleTodoAdd(text) {
-    this.setState((prevState, props) => {
-      const todos = prevState.todos;
-      todos.push({
-        text: text,
-        id: prevState.todos.length
-      });
-      return {
-        todos: todos
-      };
+    const todos = [...this.state.todos];
+    todos.push({
+      text: text,
+      id: todos.length
+    });
+    this.setState({
+      todos: todos
     });
   }
 
   handleTodoComplete(id) {
-    let todos = [...this.state.todos];
+    const todos = [...this.state.todos];
     const index = todos.findIndex(todo => todo.id === id);
     todos.splice(index, 1);
     this.setState({ todos: todos });
