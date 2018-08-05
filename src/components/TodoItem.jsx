@@ -8,8 +8,8 @@ class TodoItem extends Component {
           this.props.todo.completed ? "todo-list__item--completed" : ""
         }`}
       >
-        {this.props.todo.text}
         {this.renderButton()}
+        {this.props.todo.text}
       </li>
     );
   }
@@ -18,15 +18,17 @@ class TodoItem extends Component {
     var isCompleted = this.props.todo.completed;
     if (!isCompleted) {
       return (
-        <button onClick={() => this.props.onComplete(this.props.todo.id)}>
-          Complete
-        </button>
+        <div
+          className="todo-list__complete-button"
+          onClick={() => this.props.onComplete(this.props.todo.id)}
+        />
       );
     } else {
       return (
-        <button onClick={() => this.props.onUncomplete(this.props.todo.id)}>
-          Uncomplete
-        </button>
+        <div
+          className="todo-list__complete-button"
+          onClick={() => this.props.onUncomplete(this.props.todo.id)}
+        />
       );
     }
   }

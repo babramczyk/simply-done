@@ -4,6 +4,19 @@
   align-items: center;
 }
 
+.todo-list__item {
+  list-style: none;
+  display: flex;
+}
+
 .todo-list__item--completed {
   color: green;
+}
+
+.todo-list__complete-button {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  margin-right: 8px;
+  border: 2px solid rgb(88, 88, 88);
 }
