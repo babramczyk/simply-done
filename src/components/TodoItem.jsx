@@ -9,11 +9,20 @@ class TodoItem extends Component {
         }`}
       >
         {this.props.todo.text}
+        {this.renderButton()}
+      </li>
+    );
+  }
+
+  renderButton() {
+    var isCompleted = this.props.todo.completed;
+    if (!isCompleted) {
+      return (
         <button onClick={() => this.props.onComplete(this.props.todo.id)}>
           Complete
         </button>
-      </li>
-    );
+      );
+    }
   }
 }
 
