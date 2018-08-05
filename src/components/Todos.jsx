@@ -29,6 +29,13 @@ class Todos extends Component {
     this.setState({ todos: todos });
   }
 
+  handleTodoUncomplete(id) {
+    const todos = [...this.state.todos];
+    const todo = todos.find(todo => todo.id === id);
+    todo.completed = false;
+    this.setState({ todos: todos });
+  }
+
   render() {
     return (
       <div className="todos">
@@ -36,6 +43,7 @@ class Todos extends Component {
         <TodoList
           todos={this.state.todos}
           onTodoComplete={id => this.handleTodoComplete(id)}
+          onTodoUncomplete={id => this.handleTodoUncomplete(id)}
         />
       </div>
     );

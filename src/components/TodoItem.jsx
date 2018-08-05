@@ -22,6 +22,12 @@ class TodoItem extends Component {
           Complete
         </button>
       );
+    } else {
+      return (
+        <button onClick={() => this.props.onUncomplete(this.props.todo.id)}>
+          Uncomplete
+        </button>
+      );
     }
   }
 }
