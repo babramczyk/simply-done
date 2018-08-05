@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CreateTodo from "./CreateTodo";
-import TodosList from "./TodosList";
+import TodoList from "./TodoList";
 
 class Todos extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class Todos extends Component {
     return (
       <div className="todos">
         <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
-        <TodosList
+        <TodoList
           todos={this.state.todos}
           onTodoComplete={id => this.handleTodoComplete(id)}
         />
