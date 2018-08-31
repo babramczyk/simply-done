@@ -6,7 +6,7 @@
 }
 
 .todos {
-  width: 200px;
+  width: 300px;
   max-width: 95%;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,7 @@
 .todo-list__item {
   list-style: none;
   display: flex;
+  padding: 8px 0;
 }
 
 .todo-list__item-text {
