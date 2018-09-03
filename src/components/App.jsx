@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Todos from "./Todos";
+import Todos from "./Todos/Todos";
 import "typeface-roboto";
 
 class App extends Component {

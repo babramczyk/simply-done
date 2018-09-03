@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TodoTab from "./TodosTab";
+import TodoTab from "../TodosTab/TodosTab";
 
 class TodosTabs extends Component {
   render() {

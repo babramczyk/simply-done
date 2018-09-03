@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import CreateTodo from "./CreateTodo";
-import TodoList from "./TodoList";
-import TodosTabs from "./TodosTabs";
+import CreateTodo from "../CreateTodo/CreateTodo";
+import TodoList from "../TodoList/TodoList";
+import TodosTabs from "../TodosTabs/TodosTabs";
 
 const TABS = {
   uncompleted: 0,
