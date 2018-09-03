@@ -12,8 +12,7 @@ class TodoList extends Component {
         <TodoItem
           todo={todo}
           key={todo.id}
-          onComplete={this.props.onTodoComplete}
-          onUncomplete={this.props.onTodoUncomplete}
+          onToggle={this.props.onTodoToggle}
         />
       );
     });

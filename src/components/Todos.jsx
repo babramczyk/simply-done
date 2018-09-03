@@ -22,17 +22,10 @@ class Todos extends Component {
     });
   }
 
-  handleTodoComplete(id) {
+  handleTodoToggle(id) {
     const todos = [...this.state.todos];
     const todo = todos.find(todo => todo.id === id);
-    todo.completed = true;
-    this.setState({ todos: todos });
-  }
-
-  handleTodoUncomplete(id) {
-    const todos = [...this.state.todos];
-    const todo = todos.find(todo => todo.id === id);
-    todo.completed = false;
+    todo.completed = !todo.completed;
     this.setState({ todos: todos });
   }
 
@@ -42,8 +35,7 @@ class Todos extends Component {
         <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
         <TodoList
           todos={this.state.todos}
-          onTodoComplete={id => this.handleTodoComplete(id)}
-          onTodoUncomplete={id => this.handleTodoUncomplete(id)}
+          onTodoToggle={id => this.handleTodoToggle(id)}
         />
       </div>
     );
