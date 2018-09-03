@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CreateTodo from "./CreateTodo";
 import TodoList from "./TodoList";
+import TodosTabs from "./TodosTabs";
 
 class Todos extends Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class Todos extends Component {
     return (
       <div className="todos">
         <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
-        
+
+        <TodosTabs tabs={this.getTabs()} />
+
         <h2>Uncompleted</h2>
         <TodoList
           todos={this.getUncompletedTodos()}
@@ -32,6 +35,10 @@ class Todos extends Component {
   // =======
   // Getters
   // =======
+
+  getTabs() {
+    return [{ title: "Uncompleted" }, { title: "Completed" }];
+  }
 
   getUncompletedTodos() {
     return this.state.todos.filter(todo => !todo.completed);
