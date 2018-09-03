@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CreateTodo from "../CreateTodo/CreateTodo";
 import TodoList from "../TodoList/TodoList";
 import TodosTabs from "../TodosTabs/TodosTabs";
+import "./Todos.css";
 
 const TABS = {
   uncompleted: 0,
