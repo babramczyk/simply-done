@@ -10,6 +10,41 @@ class Todos extends Component {
     };
   }
 
+  render() {
+    return (
+      <div className="todos">
+        <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
+        
+        <h2>Uncompleted</h2>
+        <TodoList
+          todos={this.getUncompletedTodos()}
+          onTodoToggle={id => this.handleTodoToggle(id)}
+        />
+        <h2>Completed</h2>
+        <TodoList
+          todos={this.getCompletedTodos()}
+          onTodoToggle={id => this.handleTodoToggle(id)}
+        />
+      </div>
+    );
+  }
+
+  // =======
+  // Getters
+  // =======
+
+  getUncompletedTodos() {
+    return this.state.todos.filter(todo => !todo.completed);
+  }
+
+  getCompletedTodos() {
+    return this.state.todos.filter(todo => todo.completed);
+  }
+
+  // ========
+  // Handlers
+  // ========
+
   handleTodoAdd(text) {
     const todos = [...this.state.todos];
     todos.push({
@@ -27,18 +62,6 @@ class Todos extends Component {
     const todo = todos.find(todo => todo.id === id);
     todo.completed = !todo.completed;
     this.setState({ todos: todos });
-  }
-
-  render() {
-    return (
-      <div className="todos">
-        <CreateTodo onAdd={text => this.handleTodoAdd(text)} />
-        <TodoList
-          todos={this.state.todos}
-          onTodoToggle={id => this.handleTodoToggle(id)}
-        />
-      </div>
-    );
   }
 }
 
