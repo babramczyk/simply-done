@@ -3,11 +3,17 @@ import CreateTodo from "./CreateTodo";
 import TodoList from "./TodoList";
 import TodosTabs from "./TodosTabs";
 
+const TABS = {
+  uncompleted: 0,
+  completed: 1
+};
+
 class Todos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: []
+      todos: [],
+      activeTab: TABS.uncompleted
     };
   }
 
@@ -18,14 +24,8 @@ class Todos extends Component {
 
         <TodosTabs tabs={this.getTabs()} />
 
-        <h2>Uncompleted</h2>
         <TodoList
-          todos={this.getUncompletedTodos()}
-          onTodoToggle={id => this.handleTodoToggle(id)}
-        />
-        <h2>Completed</h2>
-        <TodoList
-          todos={this.getCompletedTodos()}
+          todos={this.getShownTodos()}
           onTodoToggle={id => this.handleTodoToggle(id)}
         />
       </div>
@@ -37,7 +37,18 @@ class Todos extends Component {
   // =======
 
   getTabs() {
-    return [{ title: "Uncompleted" }, { title: "Completed" }];
+    return [
+      {
+        key: TABS.uncompleted,
+        title: "Uncompleted",
+        onClick: () => this.setActiveTab(TABS.uncompleted)
+      },
+      {
+        key: TABS.completed,
+        title: "Completed",
+        onClick: () => this.setActiveTab(TABS.completed)
+      }
+    ];
   }
 
   getUncompletedTodos() {
@@ -46,6 +57,20 @@ class Todos extends Component {
 
   getCompletedTodos() {
     return this.state.todos.filter(todo => todo.completed);
+  }
+
+  getShownTodos() {
+    return this.state.todos.filter(
+      todo => todo.completed === (this.state.activeTab === TABS.completed)
+    );
+  }
+
+  // ======
+  // Setters
+  // =======
+
+  setActiveTab(tab) {
+    this.setState({ activeTab: tab });
   }
 
   // ========

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 class TodosTab extends Component {
   render() {
-    return <button>{this.props.title}</button>;
+    return (
+      <button onClick={() => this.props.onClick()}>{this.props.title}</button>
+    );
   }
 }
 

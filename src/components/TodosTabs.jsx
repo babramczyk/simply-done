@@ -3,7 +3,9 @@ import TodoTab from "./TodosTab";
 
 class TodosTabs extends Component {
   render() {
-    return this.props.tabs.map(tab => <TodoTab title={tab.title} />);
+    return this.props.tabs.map(tab => (
+      <TodoTab title={tab.title} onClick={tab.onClick} key={tab.key} />
+    ));
   }
 }
 
