@@ -5,3 +5,7 @@
   flex-direction: column;
   align-items: stretch;
 }
+
+.todos .create-todo {
+  margin-bottom: 16px;
+}

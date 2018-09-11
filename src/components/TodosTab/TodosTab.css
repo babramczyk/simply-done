@@ -1,0 +1,11 @@
+.tab {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 8px 16px;
+  outline: none;
+  border-style: solid;
+  background-color: var(--primary-light);
+  color: var(--white);
+  flex: 1;
+  font-size: 16px;
+}

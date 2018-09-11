@@ -4,7 +4,9 @@ import "./TodosTab.css";
 class TodosTab extends Component {
   render() {
     return (
-      <button onClick={() => this.props.onClick()}>{this.props.title}</button>
+      <button className="tab" onClick={() => this.props.onClick()}>
+        {this.props.title}
+      </button>
     );
   }
 }
