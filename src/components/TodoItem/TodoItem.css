@@ -6,6 +6,8 @@
 
 .todo-list__item-text {
   flex: 1;
+  overflow: hidden;
+  overflow-wrap: break-word
 }
 
 .todo-list__item--completed {
